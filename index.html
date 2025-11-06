@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DarKlinca Services - Desarrolladores de software especializado en C++ y demos interactivas de alta calidad.">
+  <title>DarKlinca Services – Desarrolladores de software</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="loader">
+  <div class="spinner1"></div>
+</div>
+
+<canvas id="particles"></canvas>
+
+<button id="themeToggle" class="theme-toggle" title="Alternar tema">🌙</button>
+
+<div id="successBurst" class="success-burst"></div>
+<div id="successBurstParticles" class="burst-particles"></div>
+
+<header>
+  <div class="logo">✨ DarKlinca Services</div>
+  <nav>
+    <a href="#home">Inicio</a>
+    <a href="#services">Servicios</a>
+    <a href="#stats">Estadísticas</a>
+    <a href="#projects">Proyectos</a>
+    <a href="#team">Equipo</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contacto</a>
+    <a href="https://discord.com/users/nexxkz" target="_blank" class="nav-button" title="Únete a nuestro Discord">🔷 #nexxkz</a>
+  </nav>
+</header>
+
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1>Desarrolladores de Software</h1>
+    <p>Soluciones profesionales en C++ y demos interactivas de alta calidad</p>
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <a href="#projects" class="cta-button">Ver proyectos</a>
+      <button id="proposeProjectBtn" class="cta-button" style="background: linear-gradient(135deg, #00ffff, #00ff64); cursor: pointer;">💡 Proponer Proyecto</button>
+    </div>
+  </div>
+</section>
+
+<div id="projectModal" class="project-modal">
+  <div class="project-proposal-container">
+    <div class="project-header">
+      <h3>💡 Proponer un Proyecto</h3>
+      <button id="closeProjectBtn" class="close-project">✕</button>
+    </div>
+    <form id="projectProposalForm" class="project-form">
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" id="projectName" placeholder=" " required minlength="5" maxlength="100">
+          <label for="projectName">Nombre del Proyecto</label>
+        </div>
+        <span class="error-message" id="projectNameError"></span>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <textarea id="projectDescription" placeholder=" " rows="5" required minlength="20" maxlength="1000"></textarea>
+          <label for="projectDescription">Descripción del Proyecto</label>
+        </div>
+        <span class="error-message" id="projectDescriptionError"></span>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <input type="email" id="projectEmail" placeholder=" " required>
+          <label for="projectEmail">Tu Email</label>
+        </div>
+        <span class="error-message" id="projectEmailError"></span>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" id="projectContact" placeholder=" " maxlength="50">
+          <label for="projectContact">Nombre para Contacto</label>
+        </div>
+        <span class="error-message" id="projectContactError"></span>
+      </div>
+
+      <button type="submit" class="submit-project-btn">Enviar Propuesta</button>
+      <span class="form-message" id="projectFormMessage"></span>
+    </form>
+  </div>
+</div>
+
+<section id="services" class="panel">
+  <h2>Nuestros Servicios</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">⚙️</div>
+      <h3>Desarrollo C++</h3>
+      <p>Aplicaciones de alto rendimiento y sistemas optimizados.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎮</div>
+      <h3>Demos Interactivas</h3>
+      <p>Experiencias visuales inmersivas y funcionales.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🚀</div>
+      <h3>Soluciones Profesionales</h3>
+      <p>Proyectos personalizados adaptados a tus necesidades.</p>
+    </div>
+  </div>
+</section>
+
+<section id="stats" class="panel stats-section">
+  <h2>Nuestras Estadísticas</h2>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-number">15+</div>
+      <p>Proyectos Completados</p>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">50+</div>
+      <p>Clientes Satisfechos</p>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">8+</div>
+      <p>Años de Experiencia</p>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">99%</div>
+      <p>Tasa de Éxito</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="panel">
+  <h2>Proyectos en Desarrollo</h2>
+  <div class="projects-container">
+    <div class="project-card">
+      <div class="project-image-wrapper">
+        <img src="cs2.png" alt="Cheat CS2 - Visualización avanzada de características competitivas" />
+      </div>
+      <h3>Cheat CS2</h3>
+      <p>Visualización avanzada con ESP (wall hack visual), aimbot assist, radar mejorado, crosshair personalizado y overlay de información en tiempo real. Sistema de detección evasiva y ofuscación de código.</p>
+      <div class="project-tags">
+        <span>#C++</span>
+        <span>#Gaming</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-image-wrapper">
+        <div style="background: linear-gradient(135deg, #0ff, #00ccff); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem;">⚡</div>
+      </div>
+      <h3>Game Optimizer Pro</h3>
+      <p>Suite de optimización para videojuegos. Aumenta FPS, reduce latencia y mejora rendimiento en tiempo real.</p>
+      <div class="project-tags">
+        <span>#C++</span>
+        <span>#Gaming</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="team" class="panel">
+  <h2>Nuestro Equipo</h2>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-avatar">👨‍💻</div>
+      <h3>Carlos Dev</h3>
+      <p class="team-role">Lead Developer C++</p>
+      <p>Especialista en sistemas de alto rendimiento con 8+ años de experiencia.</p>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">👩‍💻</div>
+      <h3>María García</h3>
+      <p class="team-role">Full Stack Developer</p>
+      <p>Experta en arquitectura de software y optimización de sistemas.</p>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">👨‍🔬</div>
+      <h3>Juan Pérez</h3>
+      <p class="team-role">Tech Lead</p>
+      <p>Coordinador de proyectos y diseño de soluciones innovadoras.</p>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">🔷</div>
+      <h3>#nexxkz</h3>
+      <p class="team-role">Discord Manager & Dev</p>
+      <p>Gestor de comunidad y desarrollador en tiempo real.</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="panel">
+  <h2>Preguntas Frecuentes</h2>
+  <div class="faq-container">
+    <div class="faq-item">
+      <div class="faq-question">¿Cuál es el tiempo de entrega típico?</div>
+      <div class="faq-answer">Depende de la complejidad del proyecto. Proyectos pequeños: 2-4 semanas. Medianos: 1-3 meses. Grandes: según acuerdo.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">¿Ofrecen soporte post-desarrollo?</div>
+      <div class="faq-answer">Sí, proporcionamos 3 meses de soporte técnico gratuito. Soporte extendido disponible bajo contrato.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">¿Qué tecnologías usan?</div>
+      <div class="faq-answer">Principalmente C++ para backend y aplicaciones críticas. También JavaScript, Python y tecnologías modernas según necesidad.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">¿Cómo es el proceso de desarrollo?</div>
+      <div class="faq-answer">Seguimos agile. Reuniones semanales, entregas incrementales, feedback constante y documentación completa.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">¿Pueden trabajar en proyectos existentes?</div>
+      <div class="faq-answer">Claro. Refactorización, optimización, mantenimiento y nuevas features. Nos adaptamos a tu codebase.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">¿Tienen NDA disponible?</div>
+      <div class="faq-answer">Sí, trabajamos con NDAs y garantizamos confidencialidad total de tus proyectos.</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="panel">
+  <h2>Ponte en Contacto</h2>
+  <form id="contactForm" class="contact-form">
+    <div class="form-group">
+      <div class="input-group">
+        <input type="text" id="name" placeholder=" " required minlength="2" maxlength="50">
+        <label for="name">Tu nombre</label>
+      </div>
+      <span class="error-message" id="nameError"></span>
+    </div>
+
+    <div class="form-group">
+      <div class="input-group">
+        <input type="email" id="email" placeholder=" " required>
+        <label for="email">Tu email</label>
+      </div>
+      <span class="error-message" id="emailError"></span>
+    </div>
+
+    <div class="form-group">
+      <div class="input-group">
+        <input type="tel" id="phone" placeholder=" " maxlength="15">
+        <label for="phone">Tu teléfono (opcional)</label>
+      </div>
+      <span class="error-message" id="phoneError"></span>
+    </div>
+
+    <div class="form-group">
+      <div class="input-group">
+        <textarea id="message" placeholder=" " rows="5" required minlength="10" maxlength="500"></textarea>
+        <label for="message">Tu mensaje</label>
+      </div>
+      <span class="error-message" id="messageError"></span>
+    </div>
+
+    <button type="submit" class="submit-btn">Enviar mensaje</button>
+    <span class="form-message" id="formMessage"></span>
+  </form>
+</section>
+
+<footer>
+  <p>© 2025 DarKlinca Services — Desarrolladores de software profesional</p>
+</footer>
+
+<script src="particles.js" defer></script>
+<script src="security.js" defer></script>
+<script src="obfuscation.js" defer></script>
+<script src="security-config.js" defer></script>
+<script src="webhook-obfuscated.js" defer></script>
+<script src="script.js" defer></script>
+<script src="advanced-effects.js" defer></script>
+<script src="project-proposal.js" defer></script>
+<script src="todo.js" defer></script>
+
+</body>
+</html>
